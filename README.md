@@ -54,6 +54,7 @@ Iniciando sesión
 	- [ ] Ver artículo específico
 	- [ ] Ver vistas de artículo
 - [ ] Usar `clear()` cuando sea necesario
+- [ ] Crear documentación del proyecto usando plantilla de GitHub Pages
 
 ## Licencia
 
