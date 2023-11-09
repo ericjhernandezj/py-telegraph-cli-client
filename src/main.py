@@ -183,8 +183,7 @@ def createAccount(short_name: str, author_name: str, author_url: str):
     response = requests.get(
         f"https://api.telegra.ph/createAccount?"
         f"short_name={short_name}&author_name={author_name}&"
-        f"author_url={author_url}"
-        )
+        f"author_url={author_url}", timeout=5)
 
     if response.status_code == 200:
         data = response.json()
@@ -193,8 +192,7 @@ def createAccount(short_name: str, author_name: str, author_url: str):
         response = requests.get(
             f'https://api.telegra.ph/getAccountInfo?access_token={token}&'
             f'fields=["short_name", "author_name", "author_url", '
-            f'"page_count","auth_url"]'
-        )
+            f'"page_count","auth_url"]', timeout=5)
         data = response.json()
 
         return Account(True, data["result"]["short_name"],
@@ -317,8 +315,7 @@ def getAccountInfo(access_token):
     response = requests.get(
         f'https://api.telegra.ph/getAccountInfo?access_token={access_token}&'
         f'fields=["short_name", "author_name", "author_url", "auth_url",'
-        f'"page_count"]'
-    )
+        f'"page_count"]', timeout=5)
     data = response.json()
 
     return Account(True, data["result"]["short_name"],
@@ -344,8 +341,7 @@ def editAccountInfo(access_token: str, target: str, new_value: str):
     """
     response = requests.get(
         f"https://api.telegra.ph/editAccountInfo?access_token={access_token}&"
-        f"{target}={new_value}"
-    )
+        f"{target}={new_value}", timeout=5)
     data = response.json()
 
     if data["ok"]:
@@ -371,8 +367,7 @@ def revokeAccessToken(access_token: str):
         https://edit.telegra.ph/auth/71oM2k1Js5FUKuUfNEYkqtr7GhpFtVtyThlTClC20i"
     """
     response = requests.get(
-        f"https://api.telegra.ph/revokeAccessToken?access_token={access_token}"
-    )
+        f"https://api.telegra.ph/revokeAccessToken?access_token={access_token}", timeout=5)
     data = response.json()
 
     if data["ok"]:
