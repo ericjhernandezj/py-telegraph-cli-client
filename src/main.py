@@ -288,8 +288,6 @@ def login(access_token: str):
                             print("Cerrando programa")
 
                             return False
-                        else:
-                            pass
                 else:
                     print("Acción cancelada")
         else:
