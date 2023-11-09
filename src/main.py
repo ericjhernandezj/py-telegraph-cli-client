@@ -282,9 +282,9 @@ def login(access_token: str):
                             "Si ya has guardado tu nuevo access_token, "
                             "ingresa 'EXIT' para cerrar del programa"
                         )
-                        exit = str(input())
+                        user_input = str(input())
 
-                        if exit == "EXIT":
+                        if user_input == "EXIT":
                             print("Cerrando programa")
 
                             return False
