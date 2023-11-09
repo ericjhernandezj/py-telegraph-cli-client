@@ -42,7 +42,7 @@ Iniciando sesión
 
 - [x] Ordenar funciones de acuerdo a su relevancia
 - [x] Usar tipado estático con `mypy`
-- [ ] Agregar timeout a peticiones. [Read more](https://pylint.readthedocs.io/en/latest/user_guide/messages/warning/missing-timeout.html)
+- [x] Agregar timeout a peticiones. [Read more](https://pylint.readthedocs.io/en/latest/user_guide/messages/warning/missing-timeout.html)
 - [ ] Opción para salir del menú de `login()`
 - [ ] Usar `clear()` cuando sea necesario
 - [ ] Agregar comentarios necesarios
