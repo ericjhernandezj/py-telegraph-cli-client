@@ -40,12 +40,13 @@ Iniciando sesión
 
 ## To-Do
 
+- [ ] Ordenar funciones de acuerdo a su relevancia
 - [ ] Usar tipado estático con `mypy`
 - [ ] Opción para salir del menú de `login()`
+- [ ] Usar `clear()` cuando sea necesario
 - [ ] Agregar comentarios necesarios
 - [ ] Agregar validaciones
 - [ ] Use English as main language
-- [ ] Ordenar funciones de acuerdo a su relevancia
 - [ ] `createAccount()` - Hacer `author_url` opcional
 - [ ] `login()` - Agregar opciones para:
 	- [ ] Crear articulo
@@ -53,7 +54,6 @@ Iniciando sesión
 	- [ ] Ver todos los artículos
 	- [ ] Ver artículo específico
 	- [ ] Ver vistas de artículo
-- [ ] Usar `clear()` cuando sea necesario
 - [ ] Crear documentación del proyecto usando plantilla de GitHub Pages
 
 ## Licencia
