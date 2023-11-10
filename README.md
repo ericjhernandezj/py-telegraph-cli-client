@@ -46,7 +46,7 @@ Iniciando sesión
 - [x] `str(input())` to `input()` when input is `str`
 - [ ] Crear guía para Usuarios y para Colaboradores
 - [x] Opción para salir del menú de `login()`
-- [ ] Usar `clear()` cuando sea necesario
+- [x] Usar `clear()` cuando sea necesario
 - [ ] Agregar comentarios necesarios
 - [ ] Agregar validaciones
 - [ ] Use English as main language
