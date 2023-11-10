@@ -40,24 +40,7 @@ Iniciando sesión
 
 ## To-Do
 
-- [x] Ordenar funciones de acuerdo a su relevancia
-- [x] Usar tipado estático con `mypy`
-- [x] Agregar timeout a peticiones. [Read more](https://pylint.readthedocs.io/en/latest/user_guide/messages/warning/missing-timeout.html)
-- [x] `str(input())` to `input()` when input is `str`
-- [ ] Crear guía para Usuarios y para Colaboradores
-- [x] Opción para salir del menú de `login()`
-- [x] Usar `clear()` cuando sea necesario
-- [ ] Agregar comentarios necesarios
-- [ ] Agregar validaciones
-- [ ] Use English as main language
-- [ ] `createAccount()` - Hacer `author_url` opcional
-- [ ] `login()` - Agregar opciones para:
-	- [ ] Crear articulo
-	- [ ] Editar artículo
-	- [ ] Ver todos los artículos
-	- [ ] Ver artículo específico
-	- [ ] Ver vistas de artículo
-- [ ] Crear documentación del proyecto usando plantilla de GitHub Pages
+[View To-Do list](todo.md)
 
 ## Licencia
 
