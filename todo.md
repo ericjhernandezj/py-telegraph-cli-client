@@ -21,6 +21,8 @@ Los elementos y versiones cambian de acuerdo a como se va moviendo el proyecto.
 	- [ ] Ver artículo específico
 	- [ ] Ver vistas de artículo
 - [ ] Crear guía para Usuarios y para Colaboradores
+- [ ] Crear función que tome cómo parámetros `color: str, message: str`
+      y regrese o imprima el mensaje en ese color
 
 ## v2.0.0
 - [ ] Use English as main language
