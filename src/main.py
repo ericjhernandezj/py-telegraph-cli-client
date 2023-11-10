@@ -220,67 +220,79 @@ def login(access_token: str):
     """
     while True:
         account = getAccountInfo(access_token)
-        if account.ok:
-            print("Sesión temporal iniciada con éxito")
-            print(f"Welcome {account.short_name}/{account.author_name}")
-            print()
-            print("--- Menú ---")
-            print("1. Mostrar información de la cuenta")
-            print("2. Editar Información")
-            print("3. Crear nuevo token de acceso (el token actual quedará "
-                  "inusable y se cerrarán las sesiones)")
-            opc = str(input())
 
-            if opc == "1":
+        if account.ok:
+            print("Esta es una sesión temporal")
+            print(f"Hola, {account.short_name} ({account.author_name})")
+            print()
+            print("1. Mostrar información")
+            print("2. Editar Información")
+            print("3. Crear nuevo token de acceso")
+            print("0. Salir")
+            user_input = input("> ")
+
+            if user_input == "1":
                 print("1. Mostrar Información Pública")
                 print("2. Mostrar Información Pública y Privada")
-                opc = input()
+                print("0. Regresar")
+                user_input = input("> ")
 
-                if opc == "1":
+                if user_input == "1":
                     account.printInfo("default")
-                elif opc == "2":
+                elif user_input == "2":
                     account.printInfo("all")
+                elif user_input == "0":
+                    pass
                 else:
-                    print("input no válido")
-            elif opc == "2":
+                    print("Entrada no válida. Regresando al menú principal")
+            elif user_input == "2":
                 print("1. Cambiar nombre corto")
                 print("2. Cambiar autor")
                 print("3. Cambiar URL de autor")
-                opc = str(input())
+                print("0. Regresar")
+                user_input = input("> ")
 
-                if opc == "1":
-                    new_short_name = str(
-                        input("Ingresar nuevo nombre corto: "))
+                if user_input == "1":
+                    print("Ingresar nuevo nombre corto")
+                    new_short_name = input("> ")
+
                     editAccountInfo(access_token, "short_name", new_short_name)
-                elif opc == "2":
-                    new_author_name = str(input("Ingresar nuevo autor: "))
+                elif user_input == "2":
+                    print("Ingresar nuevo autor")
+                    new_author_name = input("> ")
+
                     editAccountInfo(access_token, "author_name",
                                     new_author_name)
-                elif opc == "3":
-                    new_author_url = str(input("Ingrese nueva URL: https://"))
+                elif user_input == "3":
+                    print("Ingresar nueva URL")
+                    new_author_url = input("> https://")
                     new_author_url = f"https://{new_author_url}"
+
                     editAccountInfo(access_token, "author_url", new_author_url)
+                elif user_input == "0":
+                    pass
                 else:
-                    print("Input no válido")
-            elif opc == "3":
-                print("Ingresa 'OK' si deseas cerrar todas las sesiones, "
-                      "generar nuevo token de acceso y generar nuevo auth_url")
+                    print("Entrada no válida. Regresando al menú principal")
+            elif user_input == "3":
+                print("Ingresar 'OK' si deseas cerrar todas las sesiones, "
+                      "generar nuevo token de acceso y generar nueva URL "
+                      "para navegadores web")
                 print(
                     "Después de ingresar 'OK' se te proporcionará un nuevo "
-                    "token y nuevo auth URL. Guardar bien el nuevo token "
-                    "ya que es la unica forma de acceder a la cuenta."
+                    "token y nueva URL para navegadores web. Guardar el nuevo "
+                    "token ya que es la unica forma de acceder a la cuenta"
                 )
-                opc = input()
+                user_input = input("> ")
 
-                if opc == "OK":
+                if user_input == "OK":
                     revokeAccessToken(access_token)
 
                     while True:
                         print(
-                            "Si ya has guardado tu nuevo access_token, "
+                            "Si ya has guardado tu nuevo token de acceso, "
                             "ingresa 'EXIT' para cerrar del programa"
                         )
-                        user_input = str(input())
+                        user_input = input("> ")
 
                         if user_input == "EXIT":
                             print("Cerrando programa")
@@ -288,8 +300,14 @@ def login(access_token: str):
                             return False
                 else:
                     print("Acción cancelada")
+            elif user_input == "0":
+                print("Saliendo...")
+
+                return False
+            else:
+                print("Entrada no válida")
         else:
-            print("Cuenta no existente o token erroneo")
+            print("La cuenta no existe o el token es incorrecto")
 
             return False
 
@@ -383,29 +401,29 @@ def main():
     """Función principal del programa."""
     clear()
 
-    print("Client de Consola escrito en Python para Telegra.ph")
+    print("Cliente de Consola escrito en Python para Telegra.ph")
     print()
-    print("--- Menú ---")
     print("1. Crear cuenta")
     print("2. Acceder a cuenta")
-    opc = input()
+    user_input = input("> ")
 
-    if opc == "1":
-        short_name = str(
-            input(
-                "Ingresar Nombre Corto Para La Cuenta\nEste nombre será usado "
-                "para ayudar a identificar cuentas en caso de tener varias\n"
-            ))
-        author_name = str(
-            input(
-                "Ingresar nombre del autor de los articulos\nEste nombre "
-                "aparecerá como autor en futuros articulos\n"
-            ))
-        author_url = str(
-            input(
-                "Ingresa URL de autor\nCuando el lector presione el nombre "
-                "del autor, será enviado a esta URL\nhttps://"
-            ))
+    if user_input == "1":
+        print("(Obligatorio)\n"
+              "Ingresar nombre corto para La Cuenta\n"
+              "Este nombre será usado para ayudar a identificar cuentas "
+              "en caso de tener muchas")
+        short_name = input("> ")
+
+        print("(Obligatorio)\n"
+              "Ingresar nombre del autor de los articulos\n"
+              "Este nombre aparecerá como autor en futuros articulos")
+        author_name = input("> ")
+
+        print("(Obligatorio)\n"
+              "Ingresar URL de autor\n"
+              "Cuando el lector presione el nombre del autor, "
+              "será enviado a esta URL")
+        author_url = input("> https://")
         author_url = f"https://{author_url}"
 
         account = createAccount(short_name, author_name, author_url)
@@ -416,8 +434,9 @@ def main():
         else:
             print("Error al crear cuenta")
             print(account.printInfo("ok"))
-    elif opc == "2":
-        token = str(input("Ingrese su token de acceso: "))
+    elif user_input == "2":
+        print("Ingresar token de acceso")
+        token = input("> ")
 
         login(token)
     else:
