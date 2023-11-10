@@ -43,9 +43,9 @@ Iniciando sesión
 - [x] Ordenar funciones de acuerdo a su relevancia
 - [x] Usar tipado estático con `mypy`
 - [x] Agregar timeout a peticiones. [Read more](https://pylint.readthedocs.io/en/latest/user_guide/messages/warning/missing-timeout.html)
-- [ ] `str(input())` to `input()` when input is `str`
+- [x] `str(input())` to `input()` when input is `str`
 - [ ] Crear guía para Usuarios y para Colaboradores
-- [ ] Opción para salir del menú de `login()`
+- [x] Opción para salir del menú de `login()`
 - [ ] Usar `clear()` cuando sea necesario
 - [ ] Agregar comentarios necesarios
 - [ ] Agregar validaciones
