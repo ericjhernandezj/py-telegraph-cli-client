@@ -2,7 +2,7 @@
 
 Cliente de consola escrito en Python para Telegraph [Telegraph](https://telegra.ph), herramienta de Blogging minimalista desarrollada por Telegram.
 
-**v1.0.1**
+**v1.0.2**
 ## Usar Localmente
 
 Solo necesitas Python3 y acceso a Internet
