@@ -222,7 +222,7 @@ def login(access_token: str):
         account = getAccountInfo(access_token)
 
         if account.ok:
-            print("Esta es una sesión temporal")
+            print("\nEsta es una sesión temporal")
             print(f"Hola, {account.short_name} ({account.author_name})")
             print()
             print("1. Mostrar información")
@@ -238,12 +238,15 @@ def login(access_token: str):
                 user_input = input("> ")
 
                 if user_input == "1":
+                    clear()
                     account.printInfo("default")
                 elif user_input == "2":
+                    clear()
                     account.printInfo("all")
                 elif user_input == "0":
-                    pass
+                    clear()
                 else:
+                    clear()
                     print("Entrada no válida. Regresando al menú principal")
             elif user_input == "2":
                 print("1. Cambiar nombre corto")
@@ -253,27 +256,32 @@ def login(access_token: str):
                 user_input = input("> ")
 
                 if user_input == "1":
+                    clear()
                     print("Ingresar nuevo nombre corto")
                     new_short_name = input("> ")
 
                     editAccountInfo(access_token, "short_name", new_short_name)
                 elif user_input == "2":
+                    clear()
                     print("Ingresar nuevo autor")
                     new_author_name = input("> ")
 
                     editAccountInfo(access_token, "author_name",
                                     new_author_name)
                 elif user_input == "3":
+                    clear()
                     print("Ingresar nueva URL")
                     new_author_url = input("> https://")
                     new_author_url = f"https://{new_author_url}"
 
                     editAccountInfo(access_token, "author_url", new_author_url)
                 elif user_input == "0":
-                    pass
+                    clear()
                 else:
+                    clear()
                     print("Entrada no válida. Regresando al menú principal")
             elif user_input == "3":
+                clear()
                 print("Ingresar 'OK' si deseas cerrar todas las sesiones, "
                       "generar nuevo token de acceso y generar nueva URL "
                       "para navegadores web")
@@ -408,6 +416,8 @@ def main():
     user_input = input("> ")
 
     if user_input == "1":
+        clear()
+
         print("(Obligatorio)\n"
               "Ingresar nombre corto para La Cuenta\n"
               "Este nombre será usado para ayudar a identificar cuentas "
@@ -435,8 +445,12 @@ def main():
             print("Error al crear cuenta")
             print(account.printInfo("ok"))
     elif user_input == "2":
+        clear()
+
         print("Ingresar token de acceso")
         token = input("> ")
+
+        clear()
 
         login(token)
     else:
