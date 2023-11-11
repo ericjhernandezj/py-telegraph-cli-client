@@ -8,7 +8,9 @@ Los elementos y versiones cambian de acuerdo a como se va moviendo el proyecto.
 
 ## v1.0.4 - Bug Fix and Better Validations
 
-- [ ] Task
+- [ ] short_name must be 1-32 chars
+- [ ] author_name must be 0-128 chars
+- [ ] author_url must be 0-512 chars and valid URL (ends with `.com` or similar)
 
 ## v1.2.0 - New Feature
 
