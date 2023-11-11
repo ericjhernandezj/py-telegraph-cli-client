@@ -6,7 +6,7 @@ Los elementos de cada versión están ordenados del más urgente al menos.
 
 Los elementos y versiones cambian de acuerdo a como se va moviendo el proyecto.
 
-## v1.0.4 - Fix Bugs and Validations
+## v1.0.3 - Fix Bugs and Validations
 
 - [x] Alertar sobre token inusable cuando se selecciona la opción 3 de `login()`
 
