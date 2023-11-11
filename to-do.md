@@ -6,11 +6,11 @@ Los elementos de cada versión están ordenados del más urgente al menos.
 
 Los elementos y versiones cambian de acuerdo a como se va moviendo el proyecto.
 
-## v1.0.3 - Fix Bugs and Validations
+## v1.0.4 - Bug Fix and Better Validations
 
-- [x] Alertar sobre token inusable cuando se selecciona la opción 3 de `login()`
+- [ ] Task
 
-## v1.2.0
+## v1.2.0 - New Feature
 
 - [ ] `createAccount()` - Hacer `author_url` y `author_name`opcionales y agregar
 						  validaciones
@@ -24,7 +24,7 @@ Los elementos y versiones cambian de acuerdo a como se va moviendo el proyecto.
 - [ ] Crear función que tome cómo parámetros `color: str, message: str`
       y regrese o imprima el mensaje en ese color
 
-## v2.0.0
+## v2.0.0 - New Version
 - [ ] Use English as main language
 
 ## Misc
