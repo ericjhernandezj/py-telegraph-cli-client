@@ -316,7 +316,8 @@ def login(access_token: str):
             else:
                 print("Entrada no válida")
         else:
-            print("La cuenta no existe o el token es incorrecto")
+            print("La cuenta no existe.")
+            print(f'Token "{account.access_token}" no válido')
 
             return False
 
@@ -345,10 +346,13 @@ def getAccountInfo(access_token):
         f'"page_count"]', timeout=5)
     data = response.json()
 
-    return Account(True, data["result"]["short_name"],
+    if data["ok"]:
+        return Account(True, data["result"]["short_name"],
                    data["result"]["author_name"], data["result"]["author_url"],
                    data["result"]["page_count"], data["result"]["auth_url"],
                    access_token)
+    else:
+        return Account(False, "", "", "", "", "", access_token)
 
 
 def editAccountInfo(access_token: str, target: str, new_value: str):
