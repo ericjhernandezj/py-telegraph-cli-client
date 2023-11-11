@@ -284,12 +284,13 @@ def login(access_token: str):
                 clear()
                 print("Ingresar 'OK' si deseas cerrar todas las sesiones, "
                       "generar nuevo token de acceso y generar nueva URL "
-                      "para navegadores web")
-                print(
-                    "Después de ingresar 'OK' se te proporcionará un nuevo "
-                    "token y nueva URL para navegadores web. Guardar el nuevo "
-                    "token ya que es la unica forma de acceder a la cuenta"
-                )
+                      "para navegadores web\n"
+                      "Después de ingresar 'OK' se te proporcionará un nuevo "
+                      "token y nueva URL para navegadores web. Guardar el "
+                      "nuevo token ya que es la unica forma de acceder "
+                      "a la cuenta\n"
+                      "Una vez generado el nuevo token de acceso, el token "
+                      "anterior quedará inutilizable")
                 user_input = input("> ")
 
                 if user_input == "OK":
