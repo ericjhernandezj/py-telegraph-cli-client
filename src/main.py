@@ -427,19 +427,47 @@ def main():
               "Ingresar nombre corto para La Cuenta\n"
               "Este nombre será usado para ayudar a identificar cuentas "
               "en caso de tener muchas")
-        short_name = input("> ")
+
+        while True:
+            short_name = input("> ")
+
+            if len(short_name) < 1:
+                print('Nombre corto muy corto. Intente de nuevo.')
+            elif len(short_name) > 32:
+                print('Nombre corto muy largo. Intente de nuevo.')
+            else:
+                break
+
 
         print("(Obligatorio)\n"
-              "Ingresar nombre del autor de los articulos\n"
-              "Este nombre aparecerá como autor en futuros articulos")
-        author_name = input("> ")
+          "Ingresar nombre del autor de los articulos\n"
+          "Este nombre aparecerá como autor en futuros articulos")
+
+        while True:
+            author_name = input("> ")
+
+            if len(author_name) < 0:
+                print('Nombre de autor muy corto. Intente de nuevo.')
+            elif len(author_name) > 128:
+                print('Nombre de autor muy largo. Intente de nuevo.')
+            else:
+                break
 
         print("(Obligatorio)\n"
               "Ingresar URL de autor\n"
               "Cuando el lector presione el nombre del autor, "
               "será enviado a esta URL")
-        author_url = input("> https://")
-        author_url = f"https://{author_url}"
+
+        while True:
+            author_url = input("> https://")
+
+            if len(author_url) < 0:
+                print('URL muy corta. Intente de nuevo.')
+            elif len(author_url) > 512:
+                print('URL muy larga. Intente de nuevo.')
+            else:
+                author_url = f"https://{author_url}"
+                break
 
         account = createAccount(short_name, author_name, author_url)
 
