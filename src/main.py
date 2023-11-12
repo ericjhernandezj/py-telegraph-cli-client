@@ -58,6 +58,7 @@ ericjhernandezj@duck.com
 from os import system  # Para limpiar la pantalla
 
 import requests  # Para realizar peticiones a la API de telegra.ph
+import re # Para pseudo-verificar URLs
 
 
 class Account:
@@ -461,15 +462,21 @@ def main():
         while True:
             author_url = input("> https://")
 
-            if len(author_url) < 0:
-                print('URL muy corta. Intente de nuevo.')
-            elif len(author_url) > 512:
-                print('URL muy larga. Intente de nuevo.')
-            else:
-                author_url = f"https://{author_url}"
+            if not author_url:
                 break
 
+            url_pattern = re.compile(r'(www\.)?[a-zA-Z0-9.-]{1,63}\.[a-zA-Z]{2,}')
+
+            if url_pattern.match(author_url):
+                print('URL válida')
+                author_url = f'https://{author_url}'
+                break
+            else:
+                print('Formato invalido')
+
+
         account = createAccount(short_name, author_name, author_url)
+
 
         if account.ok:
             print("Cuenta creada con éxito")
