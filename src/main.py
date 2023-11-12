@@ -1,5 +1,6 @@
 """
-Cliente para Telegraph.
+Python Telegraph CLI Client
+v1.0.4
 
 Descripción
 -----------
