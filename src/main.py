@@ -465,14 +465,19 @@ def main():
             if not author_url:
                 break
 
-            url_pattern = re.compile(r'(www\.)?[a-zA-Z0-9.-]{1,63}\.[a-zA-Z]{2,}')
+            url_pattern = re.compile(
+                r'(?:www\.)?'
+                r'([a-zA-Z0-9-]{1,63}\.){1,}'
+                r'[a-zA-Z]{2,}(?:/[a-zA-Z0-9-]+)*')
 
             if url_pattern.match(author_url):
-                print('URL válida')
                 author_url = f'https://{author_url}'
-                break
+                if len(author_url) > 512:
+                    print('URL válida pero muy larga.')
+                else:
+                    break
             else:
-                print('Formato invalido')
+                print('Formato de URL invalido')
 
 
         account = createAccount(short_name, author_name, author_url)
