@@ -12,6 +12,8 @@ Los elementos y versiones cambian de acuerdo a como se va moviendo el proyecto.
 
 ## v1.2.0 - New Feature
 
+- [ ] Crear función que tome cómo parámetros `color: str, message: str`
+      y regrese o imprima el mensaje en ese color
 - [ ] `createAccount()` - Hacer `author_url` y `author_name`opcionales y agregar
 						  validaciones
 - [ ] `login()` - Agregar opciones para:
@@ -21,8 +23,6 @@ Los elementos y versiones cambian de acuerdo a como se va moviendo el proyecto.
 	- [ ] Ver artículo específico
 	- [ ] Ver vistas de artículo
 - [ ] Crear guía para Usuarios y para Colaboradores
-- [ ] Crear función que tome cómo parámetros `color: str, message: str`
-      y regrese o imprima el mensaje en ese color
 - [ ] Agregar barra de progreso mientras se realice un proceso importante
 - [ ] Dar al usuario la opción para guardar su token de acceso en un `.txt` cuando se genera una nueva cuenta, cuando se genera un nuevo token de acceso o cuando sea
 
