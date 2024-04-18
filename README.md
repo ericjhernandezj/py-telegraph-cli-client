@@ -13,8 +13,6 @@ cd py-telegraph-cli-client/
 python3 src/main.py
 ```
 
-Si este programa será ejecutado en Windows, ir a la función `clear()` y cambiar
-`system("clear")` por `system("cls")`.
 ## Funcionalidades
 
 - Permite crear una cuenta en Telegraph desde la consola, devolviendo un token de acceso y un enlace para iniciar sesión en un navegador web.
