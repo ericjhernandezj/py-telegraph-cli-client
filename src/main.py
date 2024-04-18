@@ -56,7 +56,7 @@ https://ericjhernandezj.com
 ericjhernandezj@duck.com
 """
 
-from os import system  # Para limpiar la pantalla
+import os  # Para limpiar la pantalla
 
 import requests  # Para realizar peticiones a la API de telegra.ph
 import re # Para pseudo-verificar URLs
@@ -191,7 +191,7 @@ def clear():
     Example:
         >>> clear()
     """
-    system("clear")
+    os.system('cls' if os.name == 'nt' else 'clear') # Detecta si el sistema es Windows o no
 
 
 def createAccount(short_name: str, author_name: str, author_url: str):
